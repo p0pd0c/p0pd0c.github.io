@@ -4,9 +4,13 @@ let resolution = 40
 let w
 let h
 
+let captureKeyboard = false
 
+let cnv
 function setup() {
-    createCanvas(400,400)
+    cnv = createCanvas(400,400)
+    cnv.mouseOver(toggleKeyListener)
+    cnv.mouseOut(toggleKeyListener)
     snake1 = new Snake()
     w = floor(width / resolution)
     h = floor(height / resolution)
@@ -47,10 +51,14 @@ function foodLocation() {
     food = createVector(x, y)
 }
 
+function toggleKeyListener() {
+    captureKeyboard = !captureKeyboard
+}
+
 function keyPressed({ keyCode, key }) {
     if(key === " ") {
         snake1.grow()
-    } else {
+    } else if(captureKeyboard) {
         switch(keyCode) {
             case LEFT_ARROW:
                 snake1.setDir(-1, 0)
@@ -71,6 +79,9 @@ function keyPressed({ keyCode, key }) {
     }
     
 }
+
+
+
 
 class Snake {
     constructor() {
