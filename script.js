@@ -72,6 +72,18 @@ function keyPressed({ keyCode, key }) {
             case UP_ARROW:
                 snake1.setDir(0, -1)
                 break
+            case 65:
+                snake1.setDir(-1, 0)
+                break
+            case 68:
+                snake1.setDir(1, 0)
+                break
+            case 83:
+                snake1.setDir(0, 1)
+                break
+            case 87:
+                snake1.setDir(0, -1)
+                break
             default:
                 console.log(`${keyCode} is not a mapped key!`)
                 snake1.setDir(0, 0)
