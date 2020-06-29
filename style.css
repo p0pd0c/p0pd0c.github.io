@@ -141,3 +141,11 @@ select {
     background: white;
     color: #ff6f47;
 }
+
+/* Snake styling */
+
+#defaultCanvas0 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+}
